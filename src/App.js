@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import User from './user'
+import { useState } from 'react'
 
 function Header({children}){
   return (
@@ -13,13 +14,18 @@ function Header({children}){
 
 function App() {
 
+  const  [counter, setCounter] = useState(0)
+
   function handleSubmit(event){
     event.preventDefault()
     console.log('submit')
   }
 
+
   return (
-    <div className="App">
+    <div className="App" onClick={()=> {
+      setCounter(counter + 1)
+    }}>
 
       <Header>
         <ul>
@@ -29,7 +35,7 @@ function App() {
         </ul>
       </Header>
 
-      <User name="La naturaleza" avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ3TnikLSSqhYYwqm2a9J5QHpCtg3Uhejp_Q&usqp=CAU"></User>
+      <User counter={counter} name="La naturaleza" avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ3TnikLSSqhYYwqm2a9J5QHpCtg3Uhejp_Q&usqp=CAU"></User>
 
       <form action="" onSubmit={handleSubmit}>
         <input type="text"/>
