@@ -12,6 +12,12 @@ function Header({children}){
 }
 
 function App() {
+
+  function handleSubmit(event){
+    event.preventDefault()
+    console.log('submit')
+  }
+
   return (
     <div className="App">
 
@@ -24,6 +30,12 @@ function App() {
       </Header>
 
       <User name="La naturaleza" avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ3TnikLSSqhYYwqm2a9J5QHpCtg3Uhejp_Q&usqp=CAU"></User>
+
+      <form action="" onSubmit={handleSubmit}>
+        <input type="text"/>
+        <input type="text"/>
+        <input type="submit"/>
+      </form>
 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
