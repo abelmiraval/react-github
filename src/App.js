@@ -23,7 +23,7 @@ function App() {
         </ul>
       </Header>
 
-      <User></User>
+      <User name="La naturaleza" avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ3TnikLSSqhYYwqm2a9J5QHpCtg3Uhejp_Q&usqp=CAU"></User>
 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
