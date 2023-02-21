@@ -35,7 +35,7 @@ function App() {
         </ul>
       </Header>
 
-      <User counter={counter} name="La naturaleza" avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ3TnikLSSqhYYwqm2a9J5QHpCtg3Uhejp_Q&usqp=CAU"></User>
+      <User color="purple" counter={counter} name="La naturaleza" avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ3TnikLSSqhYYwqm2a9J5QHpCtg3Uhejp_Q&usqp=CAU"></User>
 
       <form action="" onSubmit={handleSubmit}>
         <input type="text"/>
