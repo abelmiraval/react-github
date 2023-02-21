@@ -1,0 +1,7 @@
+
+
+/* Nos ahorramos el nombre del componente .User-avatar a .avatar */
+
+.avatar{
+  border: 10px solid pink;
+}
