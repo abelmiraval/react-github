@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 const RepoListStyled = styled.div`
-
+  grid-are: repo-list;
+  background: pink;
 `
 
 function RepoList() {
