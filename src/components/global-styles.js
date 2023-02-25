@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStylesStyled = createGlobalStyle`
   :root{
@@ -30,8 +30,6 @@ const GlobalStylesStyled = createGlobalStyle`
     background: var(--bg);
     color: var(--grey);
   }
-`
+`;
 
-
-
-export default GlobalStylesStyled
+export default GlobalStylesStyled;

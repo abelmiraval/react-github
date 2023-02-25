@@ -1,15 +1,9 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-const SearchStyled = styled.div`
-
-`
+const SearchStyled = styled.div``;
 
 function Search() {
-  return (
-    <SearchStyled>
-      Search
-    </SearchStyled>
-  )
+  return <SearchStyled>Search</SearchStyled>;
 }
 
-export default Search
+export default Search;
