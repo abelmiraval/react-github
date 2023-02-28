@@ -4,13 +4,24 @@ import Profile from './components/profile';
 import RepoList from './components/repo-list';
 import Search from './components/search';
 
+const repoList = [
+  {
+    name: 'mi primer proyecto con react',
+    id: 123,
+  },
+  {
+    name: 'mi segundo proyecto con react',
+    id: 124
+  }
+]
+
 function App() {
 
   return (
     <Layout>
         <Profile></Profile>
         <Filters></Filters>
-        <RepoList></RepoList>
+        <RepoList repoList={repoList}></RepoList>
         <Search></Search>
     </Layout>
   );
