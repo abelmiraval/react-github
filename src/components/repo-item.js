@@ -51,13 +51,17 @@ const RepoItemStyled = styled.div`
   .details{
     display: flex;
     gap: 1rem;
-    font: var(--grey-1)
+    font: var(--caption-regular)
   }
 
   .details-item{
     display: flex;
     gap: .5rem;
     align-items: center;
+    color: var(--grey-1);
+    & span::first-letter{
+      text-transform: uppercase;
+    }
   }
 
 
