@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ModalContent from "../modal";
 import Icon from "./icon"
 
 const FiltersStyled = styled.div`
@@ -8,6 +9,7 @@ const FiltersStyled = styled.div`
 
 function Filters() {
   return <FiltersStyled>
+    <ModalContent/>
     <h1>Icons</h1>
     <Icon name="arrow-down"/>
     <Icon name="book"/>

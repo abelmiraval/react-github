@@ -24,9 +24,7 @@ function App() {
       }
       setUser(data)
     })
-  }, [])
-
-  useEffect(() => {
+    
     getRepos(username).then(({data, isError}) =>{
       if(isError){
         console.log('no hemos encotrado los repos de este crack')
@@ -34,7 +32,7 @@ function App() {
       }
       setRepos(data)
     })
-  }, [])
+  }, [username])
 
   return (
     <Layout>
