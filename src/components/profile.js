@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "./button";
 import Icon from "./icon";
-import props from "./profile-data";
+// import props from "./profile-data";
 
 const ProfileStyled = styled.div`
   grid-area: profile;
@@ -49,7 +49,7 @@ const ProfileStyled = styled.div`
   }
 `;
 
-function Profile() {
+function Profile(props) {
   const {
     name,
     twitter_username,
@@ -61,24 +61,6 @@ function Profile() {
     following,
     location,
   } = props;
-
-  const [ coolName, setCoolName ] = useState(name)
-  const [ coolName2, setCoolName2 ] = useState(name)
-
-
-  useEffect(() => {
-    document.getElementById('root').style.border = '100px solid orange'
-    setTimeout(() => {
-      setCoolName(`Abel ${new Date().toString()}`)
-    }, 1000)
-  }, [])
-
-  useEffect(() => {
-    setTimeout(() => {
-      setCoolName2(`Abel ${new Date().toString()}`);
-    }, 1000)
-  }, [coolName2])
-
   return (
     <ProfileStyled>
       <img
@@ -88,8 +70,7 @@ function Profile() {
         height="278"
         alt=""
       />
-      <p className="name">{coolName}</p>
-      <p className="name">{coolName2}</p>
+      <p className="name">{name}</p>
       <p className="username">{login}</p>
       <div className="buttons">
         <Button text="Follow" link="#" />
