@@ -14,3 +14,8 @@ yarn add node-sass
 ```
 yarn add styled-components
 ```
+
+## Add react router dom
+```
+yarn add react-router-dom
+```
