@@ -6,6 +6,7 @@ import Search from './components/search';
 import {useState, useEffect} from 'react'
 import {getUser, getRepos} from './services/users'
 import { useParams } from 'react-router-dom'
+import Modal from "./modal"
 
 function App() {
   const params = useParams()
@@ -24,7 +25,7 @@ function App() {
       }
       setUser(data)
     })
-    
+
     getRepos(username).then(({data, isError}) =>{
       if(isError){
         console.log('no hemos encotrado los repos de este crack')
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <Layout>
+        <Modal></Modal>
         <Profile {...user}></Profile>
         <Filters></Filters>
         <RepoList repoList={repos}></RepoList>
