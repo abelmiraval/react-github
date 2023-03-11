@@ -1,9 +1,9 @@
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Overlay from "./overlay";
-import {ButtonContrast} from "./components/button";
+import { ButtonContrast } from "./components/button";
 import InputText from "./components/input-text";
+import Overlay from "./overlay";
 
 const ModalContentStyled = styled.form`
   background: var(--bg);
@@ -24,12 +24,52 @@ const ModalContentStyled = styled.form`
   }
 `
 
+class Modal extends React.Component{
+  constructor(props){
+    super(props)
+    this.name = 'ModalContent'
+  }
+
+  state = {
+    a: 'Hello World'
+  }
+
+  componentDidUpdate(){
+    console.log('el componente se actualizo');
+  }
+  componentWillUnmount(){
+    console.log('el componente esta a punto de desapareer');
+  }
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({
+        a: 'Abel',
+        b: this.name
+      })
+    }, 5000);
+
+  }
+
+  render(){
+   return(
+      <div style={{background: 'black'}}>
+        {this.state.a}
+        {this.state.b}
+        Hola mundo este es componente bonito
+      </div>
+   )
+  }
+}
+
 function ModalContent() {
   const form = useRef(null);
   const navigator = useNavigate();
   console.log({ form });
+  const [isActive, setIsActive] = useState(true)
 
   function handleSubmit(event) {
+    setIsActive(false)
     event.preventDefault();
     console.log({ form });
 
@@ -40,6 +80,9 @@ function ModalContent() {
 
   return (
     <Overlay>
+      {
+        isActive? <Modal /> : null
+      }
       <ModalContentStyled ref={form} action="" onSubmit={handleSubmit}>
         <h2 className="title">Busca a tu usuario favorito</h2>
         <InputText type="text" autoComplete='off' name="username" placeholder="Username" />
