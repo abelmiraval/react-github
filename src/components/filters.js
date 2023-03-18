@@ -5,31 +5,34 @@ import Separator from "./separator";
 
 const FiltersStyled = styled.div`
   grid-area: filters;
-  .count{
+  .count {
     font: var(--headline2-semi-bold);
     color: var(--white);
     margin-block-end: 1.5rem;
   }
-  .action-list{
+  .action-list {
     display: flex;
     gap: 1rem;
   }
-  .select-list{
+  .select-list {
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
   }
+
 `;
 
-function Filters({repoListCount, setSearch}) {
-  function handleChange(event){
-    setSearch(event.target.value)
+function Filters({ repoListCount, setSearch, setLanguage }) {
+  function handleChange(event) {
+    setSearch(event.target.value);
+  }
+
+  function handleChangeLanguage(event) {
+    setLanguage(event.target.value);
   }
 
   return (
     <FiltersStyled>
-      <h2 className="count">
-        Repositorios {repoListCount}
-      </h2>
+      <h2 className="count">Repositorios {repoListCount}</h2>
       <div className="action-list">
         <InputText
           placeholder="Busca un repositorio"
@@ -41,21 +44,28 @@ function Filters({repoListCount, setSearch}) {
             <option value="all">all</option>
             <option value="forks">forks</option>
           </Selector>
-          <Selector>
-            <option value="lenguaje" disabled>lenguaje</option>
+          <Selector handleChangeLanguage={handleChangeLanguage} >
+            <option value="lenguaje" disabled>
+              lenguaje
+            </option>
             <option value="html">html</option>
             <option value="css">css</option>
             <option value="javascript">javascript</option>
+            <option value="c#">c#</option>
+            <option value="php">php</option>
+
           </Selector>
           <Selector>
-            <option value="ordenar" disabled>ordenar</option>
+            <option value="ordenar" disabled>
+              ordenar
+            </option>
             <option value="stars">stars</option>
           </Selector>
         </div>
       </div>
-      <Separator/>
+      <Separator />
     </FiltersStyled>
-  )
+  );
 }
 
 export default Filters;

@@ -7,9 +7,9 @@ const SelectorStyled = styled.select`
   padding-inline: 1rem;
 `
 
-function Selector({children}) {
+function Selector({children, handleChangeLanguage}) {
   return (
-    <SelectorStyled>
+    <SelectorStyled onChange={handleChangeLanguage}>
       {children}
     </SelectorStyled>
   )

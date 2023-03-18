@@ -8,11 +8,18 @@ const RepoListStyled = styled.div`
   gap: 2rem;
 `;
 
-function RepoList({repoList, search}) {
+function RepoList({repoList, search, language}) {
   let list = repoList
   if(search !== ''){
     list = list.filter((item) => {
       return item.name.search(search) >= 0
+    })
+  }
+
+  if(language !== ''){
+    list = list.filter((item) => {
+      console.log(item.language ? item.language.search(language) >= 0 : false)
+      return item.language ? item.language.toLowerCase().search(language.toLowerCase()) >= 0 : false
     })
   }
 
