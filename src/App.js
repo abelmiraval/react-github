@@ -41,12 +41,21 @@ function App() {
     })
   }, [username])
 
+
+  function handleRepoListUpdate(list) {
+    if (list.length === 0) {
+      setIsInvisible(true);
+    } else {
+      setIsInvisible(false);
+    }
+  }
+
   return (
     <Layout>
         <Modal isActive={modal} setModal={setModal}></Modal>
         <Profile {...user}></Profile>
         <Filters setSearch={setSearch} setLanguage={setLanguage} repoListCount={repos.length} isInvisible={isInvisible}></Filters>
-        <RepoList search={search} language={language} repoList={repos} setIsInvisible={setIsInvisible}></RepoList>
+        <RepoList search={search} language={language} repoList={repos} handleRepoListUpdate={handleRepoListUpdate}></RepoList>
         <Search setModal={setModal}></Search>
     </Layout>
   );

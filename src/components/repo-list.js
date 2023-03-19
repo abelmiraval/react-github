@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 import RepoItem from "./repo-item";
 
@@ -14,7 +15,10 @@ const RepoListStyled = styled.div`
   }
 `;
 
-function RepoList({repoList, search, language, setIsInvisible}) {
+
+
+
+function RepoList({repoList, search, language, handleRepoListUpdate}) {
   let list = repoList
   if(search !== ''){
     list = list.filter((item) => {
@@ -28,9 +32,11 @@ function RepoList({repoList, search, language, setIsInvisible}) {
     })
   }
 
-  if(list.length === 0 ){
-    setIsInvisible(true)
-  }
+  useEffect(() => {
+    if(list.length === 0){
+      handleRepoListUpdate(list);
+    }
+  }, [list, handleRepoListUpdate]);
 
   return (
     <RepoListStyled>
