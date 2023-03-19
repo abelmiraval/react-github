@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const SelectorStyled = styled.select`
   border: none;
-  background: var(--button-bg);
+  background: var(--buttonBG);
   color: var(--white);
   padding-inline: 1rem;
 `

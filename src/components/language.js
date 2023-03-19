@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const LanguageStyled = styled.div`
   display: flex;
@@ -22,6 +22,15 @@ const languages = {
   },
   javascript: {
     color: 'yellow',
+  },
+  typescript: {
+    color: '#3178C6',
+  },
+  'c#': {
+    color: '#9A4D8C',
+  },
+  php:{
+    color: '#777BB4'
   }
 }
 
