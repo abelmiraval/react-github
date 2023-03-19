@@ -6,9 +6,15 @@ const RepoListStyled = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  .repoListNotFound{
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+    font-size: 1rem;
+  }
 `;
 
-function RepoList({repoList, search, language}) {
+function RepoList({repoList, search, language, setIsInvisible}) {
   let list = repoList
   if(search !== ''){
     list = list.filter((item) => {
@@ -16,18 +22,25 @@ function RepoList({repoList, search, language}) {
     })
   }
 
-  if(language !== ''){
+  if(language !== '' && language !== 'all'){
     list = list.filter((item) => {
-      console.log(item.language ? item.language.search(language) >= 0 : false)
       return item.language ? item.language.toLowerCase().search(language.toLowerCase()) >= 0 : false
     })
   }
 
+  if(list.length === 0 ){
+    setIsInvisible(true)
+  }
+
   return (
     <RepoListStyled>
-      {list.map((item) => {
+
+      {list.length ? list.map((item) => {
         return <RepoItem {...item} key={item.id}/>
-      })}
+      }) :
+      <div className="repoListNotFound">
+        There are no repositories
+      </div>}
     </RepoListStyled>
   )
 }

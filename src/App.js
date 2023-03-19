@@ -19,6 +19,7 @@ function App() {
   const [modal, setModal] = useState(false)
   const [search, setSearch] = useState('')
   const [language, setLanguage] = useState('')
+  const [isInvisible, setIsInvisible] = useState(false)
 
 
 
@@ -44,8 +45,8 @@ function App() {
     <Layout>
         <Modal isActive={modal} setModal={setModal}></Modal>
         <Profile {...user}></Profile>
-        <Filters setSearch={setSearch} setLanguage={setLanguage} repoListCount={repos.length}></Filters>
-        <RepoList search={search} language={language} repoList={repos}></RepoList>
+        <Filters setSearch={setSearch} setLanguage={setLanguage} repoListCount={repos.length} isInvisible={isInvisible}></Filters>
+        <RepoList search={search} language={language} repoList={repos} setIsInvisible={setIsInvisible}></RepoList>
         <Search setModal={setModal}></Search>
     </Layout>
   );

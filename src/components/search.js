@@ -4,7 +4,7 @@ import Icon from './icon'
 
 const SearchStyled = styled.div`
   position: fixed;
-  inset-inline-start: 1.5rem;
+  inset-inline-end: 1.5rem;
   inset-block-end: 1.5rem;
 `;
 

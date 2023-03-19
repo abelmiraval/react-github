@@ -21,7 +21,7 @@ const FiltersStyled = styled.div`
 
 `;
 
-function Filters({ repoListCount, setSearch, setLanguage }) {
+function Filters({ repoListCount, setSearch, setLanguage, isInvisible }) {
   function handleChange(event) {
     setSearch(event.target.value);
   }
@@ -45,9 +45,7 @@ function Filters({ repoListCount, setSearch, setLanguage }) {
             <option value="forks">forks</option>
           </Selector>
           <Selector handleChangeLanguage={handleChangeLanguage} >
-            <option value="lenguaje" disabled>
-              lenguaje
-            </option>
+            <option value="all">all</option>
             <option value="html">html</option>
             <option value="css">css</option>
             <option value="javascript">javascript</option>
@@ -63,7 +61,7 @@ function Filters({ repoListCount, setSearch, setLanguage }) {
           </Selector>
         </div>
       </div>
-      <Separator />
+      {!isInvisible?  <Separator /> : null }
     </FiltersStyled>
   );
 }
