@@ -1,12 +1,12 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Filters from './components/filters';
 import Layout from './components/layout';
 import Profile from './components/profile';
 import RepoList from './components/repo-list';
 import Search from './components/search';
-import {useState, useEffect} from 'react'
-import {getUser, getRepos} from './services/users'
-import { useParams } from 'react-router-dom'
-import Modal from "./modal"
+import Modal from "./modal";
+import { getRepos, getUser } from './services/users';
 
 function App() {
   const params = useParams()
@@ -20,8 +20,6 @@ function App() {
   const [search, setSearch] = useState('')
   const [language, setLanguage] = useState('')
   const [isInvisible, setIsInvisible] = useState(false)
-
-
 
   useEffect(() => {
     getUser(username).then(({data, isError}) =>{

@@ -9,14 +9,24 @@ const FiltersStyled = styled.div`
     font: var(--headline2-semi-bold);
     color: var(--white);
     margin-block-end: 1.5rem;
+    display: none;
   }
   .action-list {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
   }
   .select-list {
     display: flex;
     gap: 0.5rem;
+  }
+  @media screen and (min-width: 768px) {
+    .action-list{
+      flex-direction: row;
+    }
+    .count{
+      display: block;
+    }
   }
 
 `;

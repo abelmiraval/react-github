@@ -10,6 +10,9 @@ const InputText = styled.input`
   color: var(--white);
   flex: 1;
 
+  @media screen and (max-width: 768px){
+    margin-block-start: 2.5rem;
+  }
 `
 
 export default InputText

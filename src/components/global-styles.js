@@ -10,7 +10,8 @@ const GlobalStylesStyled = createGlobalStyle`
     --black-1: #171b21;
     --grey: #8b949e;
     --grey-1: #c5ced7;
-    --grey-2: #3f4954;
+    /* --grey-2: #3f4954; */
+    --grey-2: #c5ced7;
     --pink: #cc68a0;
     --yellow: #f1e05a;
     --purple: #563d7c;
